@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float bulletSpeed;
+
+    Vector3 dir;
+    float timeCount;
+
+    public void SetData(Vector3 firPos, Vector3 dir)
     {
-        
+        this.dir = dir;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //Vector3 target = (transform.position.normalized - dir) * 10;
+        transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward * 10, timeCount);
+        timeCount += Time.deltaTime;  
     }
 }
