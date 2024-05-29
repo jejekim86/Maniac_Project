@@ -6,7 +6,7 @@ public class Player : PlayerController
 {
     Vector3 mousepos;
     float moveSpeed = 3f;
-    public override void MoveControll()
+   /* public override void MoveControll()
     {
         if (Input.GetKey(KeyCode.W))
             transform.Translate(Vector3.forward * (Time.deltaTime * moveSpeed));
@@ -23,8 +23,8 @@ public class Player : PlayerController
         
 
     }
-
-    private void Update()
+*/
+ /*   private void Update()
     {
         MoveControll();
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
@@ -33,5 +33,5 @@ public class Player : PlayerController
 
 
 
-    }
+    }*/
 }
