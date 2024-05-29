@@ -1,5 +1,6 @@
  using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public sealed class GameManager : MonoBehaviour
     //[SerializeField] Datamanager Datamanager;
 
     [SerializeField] private Text timerText;
+    public Image[] images;
+
 
     int Level = 0;
     float curTime;
@@ -22,9 +25,6 @@ public sealed class GameManager : MonoBehaviour
 
     void Awake()
     {
-        maxTime = 300f;
-        StartCoroutine(StartTimer());
-
         if (null == instance)
         {
             instance = this;
@@ -43,17 +43,30 @@ public sealed class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        maxTime = 300f;
+        StartCoroutine(StartTimer());
+    }
+
     IEnumerator StartTimer()
     {
         curTime = maxTime;
 
         while (curTime > 0)
         {
-            curTime -= Time.deltaTime;
+            curTime -= 1;
             minute = (int)curTime / 60;
             second = (int)curTime % 60;
             timerText.text = minute.ToString("00") + ":" + second.ToString("00");
-            yield return null;
+            yield return new WaitForSeconds(1);
+
+            // 10초 마다 이미지를 변경
+            if ((int)curTime % 10 == 0 && Level < images.Length)
+            {
+                images[Level].gameObject.SetActive(true);
+                Level++; // 다음 레벨로 진행
+            }
 
             if (curTime <= 0)
             {
@@ -63,5 +76,9 @@ public sealed class GameManager : MonoBehaviour
             }
         }
     }
-    
+
+    private void Update()
+    {
+        
+    }
 }
