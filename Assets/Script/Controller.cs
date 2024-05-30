@@ -12,9 +12,8 @@ public class Controller : MonoBehaviour
     public Animator animator;
     public new Rigidbody rigidbody;
 
-    //public Weapon longRangeWeapon;
-    //public Weapon meleeWeapon;
-
+    [SerializeField] Weapon longRangeWeapon;
+    [SerializeField] Weapon meleeWeapon;
 
     Vector3 translation;
 
@@ -29,7 +28,7 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-
+        // ì´ë™
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -42,55 +41,43 @@ public class Controller : MonoBehaviour
         translation *= speed;
         transform.Translate(translation, Space.World);
 
+        // ëŒ€ì‰¬
         if (Input.GetKey(KeyCode.LeftShift) && canDash)
         {
             canDash = false;
             StartCoroutine(Dash());
         }
 
+        // ì• ë‹ˆë©”ì´ì…˜
         animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
         animator.SetFloat("Horizontal", horizontalMove, 0.1f, Time.deltaTime);
         animator.SetFloat("WalkSpeed", animSpeed);
-
-
-
+        
+        // íšŒì „
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
         transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
 
-        /*//±ÙÁ¢ °ø°İ
+        //ê·¼ì ‘ ê³µê²©
         if (Input.GetMouseButton(1))
         {
             if(meleeWeapon.MeleeAttack())
                 animator.SetTrigger("MeleeAttack");
         }
-        //¿ø°Å¸® °ø°İ
+        //ì›ê±°ë¦¬ ê³µê²©
         if (Input.GetMouseButton(0))
         {
             longRangeWeapon.LongRangeAttack();
-        }*/
+        }
 
     }
 
     IEnumerator Dash()
     {
         rigidbody.AddForce(translation * dashPower, ForceMode.Impulse);
-        yield return new WaitForSeconds(0.5f); // ´ë½¬ Áö¼Ó ½Ã°£
+        yield return new WaitForSeconds(0.5f); // ëŒ€ì‰¬ ì§€ì† ì‹œê°„
         rigidbody.velocity = Vector3.zero;
         canDash = true;
     }
-
-    /*
-    IEnumerator LongRangeWeapon()
-    {
-        while(Input.GetMouseButton(0))
-        {
-            longRangeWeapon.LongRangeAttack(transform);
-            yield return null;
-        }
-
-    }
-    */
-
 }

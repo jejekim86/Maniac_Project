@@ -10,7 +10,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] Collider attackRange;
 
     float timeCount;
-    public float reloadT = 1.0f;
+    public float reloadT = 1.0f; // 임시 값 추후에 w_data.reloadTime 으로 교체
+
     private void Start()
     {
         timeCount = 100;
@@ -33,7 +34,12 @@ public class Weapon : MonoBehaviour
         //if (timeCount >= w_data.reloadTime)
         if (timeCount >= reloadT)
         {
-            Instantiate(bullet, fireTr.position, fireTr.rotation);
+            Bullet newBullet;
+            PoolManager.instance.bulletPool.GetObject(out newBullet);
+            newBullet.transform.position = fireTr.transform.position;
+            newBullet.transform.rotation = fireTr.rotation;
+
+            //Instantiate(bullet, fireTr.position, fireTr.rotation);
             timeCount = 0;
         }
 

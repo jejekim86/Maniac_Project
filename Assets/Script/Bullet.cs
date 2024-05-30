@@ -17,7 +17,11 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        //Vector3 target = (transform.position.normalized - dir) * 10;
+        if(timeCount >= 1)  
+        {
+            PoolManager.instance.bulletPool.PutInPool(this);
+            timeCount = 0;
+        }
         transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward * 10, timeCount);
         timeCount += Time.deltaTime;  
     }
@@ -26,7 +30,9 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-
+            
         }
+
+        // 오브젝트풀로 돌아가기
     }
 }
