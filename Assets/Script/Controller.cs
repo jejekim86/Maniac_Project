@@ -12,8 +12,8 @@ public class Controller : MonoBehaviour
     public Animator animator;
     public new Rigidbody rigidbody;
 
-    public Weapon longRangeWeapon;
-    public Weapon meleeWeapon;
+    //public Weapon longRangeWeapon;
+    //public Weapon meleeWeapon;
 
 
     Vector3 translation;
@@ -59,7 +59,7 @@ public class Controller : MonoBehaviour
         Physics.Raycast(ray, out hit);
         transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
 
-        //근접 공격
+        /*//근접 공격
         if (Input.GetMouseButton(1))
         {
             if(meleeWeapon.MeleeAttack())
@@ -69,7 +69,7 @@ public class Controller : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             longRangeWeapon.LongRangeAttack();
-        }
+        }*/
 
     }
 
