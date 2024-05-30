@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -12,6 +13,8 @@ public class Controller : MonoBehaviour
     public new Rigidbody rigidbody;
 
     public Weapon longRangeWeapon;
+    public Weapon meleeWeapon;
+
 
     Vector3 translation;
 
@@ -21,6 +24,7 @@ public class Controller : MonoBehaviour
         canDash = true;
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        //StartCoroutine(LongRangeWeapon());
     }
 
     void Update()
@@ -56,25 +60,37 @@ public class Controller : MonoBehaviour
         transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
 
         //근접 공격
-
+        if (Input.GetMouseButton(1))
+        {
+            if(meleeWeapon.MeleeAttack())
+                animator.SetTrigger("MeleeAttack");
+        }
         //원거리 공격
         if (Input.GetMouseButton(0))
         {
-            StartCoroutine(LongRangeWeapon());
+            longRangeWeapon.LongRangeAttack();
         }
+
     }
+
     IEnumerator Dash()
     {
         rigidbody.AddForce(translation * dashPower, ForceMode.Impulse);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f); // 대쉬 지속 시간
         rigidbody.velocity = Vector3.zero;
         canDash = true;
     }
 
+    /*
     IEnumerator LongRangeWeapon()
     {
-        longRangeWeapon.LongRangeAttack(transform);
-        yield return new WaitForSeconds(1f);
+        while(Input.GetMouseButton(0))
+        {
+            longRangeWeapon.LongRangeAttack(transform);
+            yield return null;
+        }
+
     }
+    */
 
 }
