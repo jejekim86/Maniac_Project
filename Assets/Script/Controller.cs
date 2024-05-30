@@ -15,7 +15,6 @@ public class Controller : MonoBehaviour
     [SerializeField] Weapon longRangeWeapon;
     [SerializeField] Weapon meleeWeapon;
 
-
     Vector3 translation;
 
     bool canDash;
@@ -29,7 +28,7 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        // ÀÌµ¿
+        // ì´ë™
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -42,31 +41,31 @@ public class Controller : MonoBehaviour
         translation *= speed;
         transform.Translate(translation, Space.World);
 
-        // ´ë½¬
+        // ëŒ€ì‰¬
         if (Input.GetKey(KeyCode.LeftShift) && canDash)
         {
             canDash = false;
             StartCoroutine(Dash());
         }
 
-        // ¾Ö´Ï¸ŞÀÌ¼Ç
+        // ì• ë‹ˆë©”ì´ì…˜
         animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
         animator.SetFloat("Horizontal", horizontalMove, 0.1f, Time.deltaTime);
         animator.SetFloat("WalkSpeed", animSpeed);
         
-        // È¸Àü
+        // íšŒì „
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
         transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
 
-        //±ÙÁ¢ °ø°İ
+        //ê·¼ì ‘ ê³µê²©
         if (Input.GetMouseButton(1))
         {
             if(meleeWeapon.MeleeAttack())
                 animator.SetTrigger("MeleeAttack");
         }
-        //¿ø°Å¸® °ø°İ
+        //ì›ê±°ë¦¬ ê³µê²©
         if (Input.GetMouseButton(0))
         {
             longRangeWeapon.LongRangeAttack();
@@ -77,7 +76,7 @@ public class Controller : MonoBehaviour
     IEnumerator Dash()
     {
         rigidbody.AddForce(translation * dashPower, ForceMode.Impulse);
-        yield return new WaitForSeconds(0.5f); // ´ë½¬ Áö¼Ó ½Ã°£
+        yield return new WaitForSeconds(0.5f); // ëŒ€ì‰¬ ì§€ì† ì‹œê°„
         rigidbody.velocity = Vector3.zero;
         canDash = true;
     }
