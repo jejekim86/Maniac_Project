@@ -12,8 +12,8 @@ public class Controller : MonoBehaviour
     public Animator animator;
     public new Rigidbody rigidbody;
 
-    public Weapon longRangeWeapon;
-    public Weapon meleeWeapon;
+    [SerializeField] Weapon longRangeWeapon;
+    [SerializeField] Weapon meleeWeapon;
 
 
     Vector3 translation;
@@ -29,7 +29,7 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-
+        // 이동
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -42,18 +42,19 @@ public class Controller : MonoBehaviour
         translation *= speed;
         transform.Translate(translation, Space.World);
 
+        // 대쉬
         if (Input.GetKey(KeyCode.LeftShift) && canDash)
         {
             canDash = false;
             StartCoroutine(Dash());
         }
 
+        // 애니메이션
         animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
         animator.SetFloat("Horizontal", horizontalMove, 0.1f, Time.deltaTime);
         animator.SetFloat("WalkSpeed", animSpeed);
-
-
-
+        
+        // 회전
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
@@ -80,17 +81,4 @@ public class Controller : MonoBehaviour
         rigidbody.velocity = Vector3.zero;
         canDash = true;
     }
-
-    /*
-    IEnumerator LongRangeWeapon()
-    {
-        while(Input.GetMouseButton(0))
-        {
-            longRangeWeapon.LongRangeAttack(transform);
-            yield return null;
-        }
-
-    }
-    */
-
 }
