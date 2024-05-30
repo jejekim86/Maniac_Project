@@ -10,15 +10,18 @@ public class ObjectPool<T> where T : MonoBehaviour
     Transform containerObject;
     Queue<T> objectPool;
 
-    public bool Initialize(T value = null)
+    public bool Initialize()
     {
-        if (value) targetObject = value;
+        // TODO : 예외처리 직관적으로
 
-        if (!targetObject || containerObject) return false;
-        if (1 > poolingAmount) poolingAmount = 1;
+        if (objectPool != null) return false;
+        //if (!targetObject || containerObject) return false;
+
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
         sb.Append(targetObject.name);
         sb.Append("을 담고 있는 Pool Container");
+
+
         containerObject = new GameObject(sb.ToString()).transform;
         objectPool = new Queue<T>();
 
