@@ -1,16 +1,22 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 상속 받은 친구들이 인스펙터 창에서 쓸수 있도록
 [System.Serializable]
-public class ObjectPool<T> where T : MonoBehaviour
+public class ObjectPool_분석<T> where T : MonoBehaviour
 {
+    // 생성할 오브젝트
     [SerializeField] T targetObject;
-    
+
+    // 생성 범위
     [SerializeField][Range(1, 100)] int poolingAmount = 1;
     Transform containerObject;
 
+    // 큐는 리스트와 다르게 자동으로 당겨주니까 사용함
     Queue<T> objectPool;
+
+    // 초기화 단계
 
     public bool Initialize(T value = null)
     {
@@ -33,7 +39,7 @@ public class ObjectPool<T> where T : MonoBehaviour
 
         sb.Append(targetObject.name);
 
-        sb.Append("�� ��� �ִ� Pool Container");
+        sb.Append("을 담고 있는 Pool Container");
 
         containerObject = new GameObject(sb.ToString()).transform;
 
@@ -63,7 +69,7 @@ public class ObjectPool<T> where T : MonoBehaviour
         return true;
     }
 
-    /// <summary> item �ϳ��� Pool���� ���� Ȱ��ȭ ��Ų��. </summary>
+    /// <summary> item 하나를 Pool에서 꺼내 활성화 시킨다. </summary>
     public bool GetObject(out T item)
     {
         item = null;
@@ -83,7 +89,7 @@ public class ObjectPool<T> where T : MonoBehaviour
         return true;
     }
 
-    /// <summary> item�� ��Ȱ��ȭ ��Ű�� Pool�� �ִ´�. </summary>
+    /// <summary> item을 비활성화 시키고 Pool에 넣는다. </summary>
     public bool PutInPool(T item)
     {
         if (!(item && containerObject))
