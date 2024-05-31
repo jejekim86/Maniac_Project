@@ -62,13 +62,13 @@ public class Controller : MonoBehaviour
         //근접 공격
         if (Input.GetMouseButton(1))
         {
-            if(meleeWeapon.MeleeAttack())
+            if(meleeWeapon.Attack())
                 animator.SetTrigger("MeleeAttack");
         }
         //원거리 공격
         if (Input.GetMouseButton(0))
         {
-            longRangeWeapon.LongRangeAttack();
+            longRangeWeapon.Attack();
         }
 
     }
