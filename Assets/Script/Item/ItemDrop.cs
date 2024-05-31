@@ -24,6 +24,10 @@ public class ItemDrop : MonoBehaviour
                 {
                     itemGet.ItemGet_Money(other.gameObject);
                 }
+                else if (itemType == "HP")
+                {
+                    itemGet.ItemGet_HP(other.gameObject);
+                }
             }
 
             Destroy(gameObject);
