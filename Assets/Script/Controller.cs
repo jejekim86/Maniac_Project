@@ -15,9 +15,12 @@ public class Controller : MonoBehaviour
 
     [SerializeField] Weapon longRangeWeapon;
     [SerializeField] Weapon meleeWeapon;
-    [SerializeField] Text money_text;
+    [SerializeField] Text moneyText;
+    [SerializeField] Image HP_image;
+    [SerializeField] private float maxHp = 10f; // 최대 체력
 
-    private int money;
+    private int money; // 소유 돈
+    private float curHp; // 현재 체력
 
     Vector3 translation;
     bool canDash;
@@ -27,7 +30,9 @@ public class Controller : MonoBehaviour
         canDash = true;
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        money = 1000;
+        money = 1000; // 초기 돈
+        curHp = 0.1f; // 초기 체력
+
         //StartCoroutine(LongRangeWeapon());
     }
 
@@ -75,7 +80,6 @@ public class Controller : MonoBehaviour
         {
             longRangeWeapon.Attack();
         }
-
     }
 
     IEnumerator Dash()
@@ -99,6 +103,17 @@ public class Controller : MonoBehaviour
     public void AddMoney(int amount)
     {
         money += amount;
-        money_text.text = money.ToString();
+        moneyText.text = money.ToString();
+    }
+
+    public void AddHp(float heal)
+    {
+        curHp += heal;
+        if (curHp > maxHp)
+        {
+            curHp = maxHp;
+
+        }
+            HP_image.fillAmount = curHp / maxHp;
     }
 }

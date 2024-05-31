@@ -6,6 +6,7 @@ public class ItemGet : MonoBehaviour
 {
     [SerializeField] private GameObject itemPrefab; // æ∆¿Ã≈€ «¡∏Æ∆’
     private int amount = 20; // »πµÊ ∞ÒµÂ∑Æ
+    private float healAmount = 1f; // √º∑¬ »∏∫π∑Æ
 
     public void ItemGet_Gun(GameObject target)
     {        
@@ -36,5 +37,14 @@ public class ItemGet : MonoBehaviour
         {
             controller.AddMoney(amount);
         }
-    }    
+    }
+
+    public void ItemGet_HP(GameObject target)
+    {
+        Controller controller = target.GetComponent<Controller>();
+        if (controller != null)
+        {
+            controller.AddHp(healAmount);
+        }
+    }
 }
