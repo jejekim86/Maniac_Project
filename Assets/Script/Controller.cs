@@ -23,6 +23,7 @@ public class Controller : MonoBehaviour
         canDash = true;
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        // 획득한 아이템을 불러와야해
         //StartCoroutine(LongRangeWeapon());
     }
 
@@ -79,5 +80,15 @@ public class Controller : MonoBehaviour
         yield return new WaitForSeconds(0.5f); // 대쉬 지속 시간
         rigidbody.velocity = Vector3.zero;
         canDash = true;
+    }
+
+    public void SetLongRangeWeapon(Weapon weapon)
+    {
+        longRangeWeapon = weapon;
+    }
+
+    public void SetMeleeWeapon(Weapon weapon)
+    {
+        meleeWeapon = weapon;
     }
 }
