@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -14,16 +15,19 @@ public class Controller : MonoBehaviour
 
     [SerializeField] Weapon longRangeWeapon;
     [SerializeField] Weapon meleeWeapon;
+    [SerializeField] Text money_text;
+
+    private int money;
 
     Vector3 translation;
-
     bool canDash;
+
     void Start()
     {
         canDash = true;
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        // 획득한 아이템을 불러와야해
+        money = 1000;
         //StartCoroutine(LongRangeWeapon());
     }
 
@@ -90,5 +94,11 @@ public class Controller : MonoBehaviour
     public void SetMeleeWeapon(Weapon weapon)
     {
         meleeWeapon = weapon;
+    }
+
+    public void AddMoney(int amount)
+    {
+        money += amount;
+        money_text.text = money.ToString();
     }
 }

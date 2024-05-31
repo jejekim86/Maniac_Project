@@ -5,17 +5,25 @@ using UnityEngine;
 public class ItemDrop : MonoBehaviour
 {
     [SerializeField] private GameObject itemPrefab; // æ∆¿Ã≈€ «¡∏Æ∆’
+    [SerializeField] private string itemType;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("æ∆¿Ã≈€ »πµÊ");
+            Debug.Log($"{itemType} »πµÊ");
             ItemGet itemGet = other.GetComponent<ItemGet>();
             
             if (itemGet != null)
             {
-                itemGet.ItemGet_Gun(other.gameObject);
+                if (itemType == "Gun")
+                {
+                    itemGet.ItemGet_Gun(other.gameObject);
+                }
+                else if (itemType == "Money")
+                {
+                    itemGet.ItemGet_Money(other.gameObject);
+                }
             }
 
             Destroy(gameObject);
