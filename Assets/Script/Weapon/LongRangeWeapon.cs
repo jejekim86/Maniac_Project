@@ -4,22 +4,11 @@ using UnityEngine;
 
 public class LongRangeWeapon : Weapon
 {
-    [SerializeField] Bullet bullet;
-    [SerializeField] Transform fireTr;
+    [SerializeField] protected Bullet bullet;
+    [SerializeField] protected Transform fireTr;
     public override bool Attack()
     {
-        //if (timeCount >= w_data.reloadTime)
-        if (timeCount >= reloadT)
-        {
-            Bullet newBullet;
-            PoolManager.instance.bulletPool.GetObject(out newBullet);
-            newBullet.transform.position = fireTr.transform.position;
-            newBullet.transform.rotation = fireTr.rotation;
-
-            //Instantiate(bullet, fireTr.position, fireTr.rotation);
-            timeCount = 0;
-        }
-        return true;
+        return base.Attack();
     }
 
     public override void SetData()

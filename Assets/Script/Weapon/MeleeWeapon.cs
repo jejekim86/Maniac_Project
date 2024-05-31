@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class MeleeWeapon : Weapon
 {
-    [SerializeField] Collider attackRange;
-    [SerializeField] AnimationClip animationClip; // 근거리 공격 모션
+    [SerializeField] protected Collider attackRange;
+    [SerializeField] protected AnimationClip animationClip; // 근거리 공격 모션
     override protected void Start()
     {
         base.Start();

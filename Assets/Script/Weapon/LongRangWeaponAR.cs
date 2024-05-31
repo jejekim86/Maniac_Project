@@ -6,7 +6,16 @@ public class LongRangWeaponAR : LongRangeWeapon
 {
     public override bool Attack()
     {
-        return base.Attack();
+        if (timeCount < reloadT)
+        {
+            return false;
+        }
+        Bullet newBullet;
+        PoolManager.instance.bulletPool.GetObject(out newBullet);
+        newBullet.transform.position = fireTr.transform.position;
+        newBullet.transform.rotation = fireTr.rotation;
+        timeCount = 0;
+        return true;
     }
 
     public override void SetData()
