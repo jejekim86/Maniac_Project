@@ -27,7 +27,11 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         player = GameObject.FindWithTag("Player");
+
+        // 플레이어가 시야에 들어왔는지
         playerInVisionRadius = Physics.CheckSphere(transform.position, visionRadius, LayerMask.GetMask("Player"));
+
+        // 플레이어가 공격 범위 안에 있는지
         playerInAttackRadius = Physics.CheckSphere(transform.position, attackRadius, LayerMask.GetMask("Player"));
 
         if (playerInAttackRadius)

@@ -34,6 +34,13 @@ public class EnemyAttackState : MonoBehaviour, State
         if (!isAttack)
         {
             isAttack = true;
+
+            // 공격시 위치 고정
+            EnemyAgent.SetDestination(transform.position);
+
+            // 공격시 플레이어 바라보기
+            transform.LookAt(target);
+
             StartCoroutine(Attack());
         }
     }
