@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 215171435}
   - component: {fileID: 215171434}
   - component: {fileID: 215171433}
+  - component: {fileID: 215171437}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -529,6 +530,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215171431}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &215171437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215171431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &230486328
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +783,7 @@ GameObject:
   - component: {fileID: 273440026}
   - component: {fileID: 273440025}
   - component: {fileID: 273440024}
+  - component: {fileID: 273440028}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -874,6 +891,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273440022}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &273440028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273440022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &296812407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1114,7 @@ GameObject:
   - component: {fileID: 398622182}
   - component: {fileID: 398622181}
   - component: {fileID: 398622180}
+  - component: {fileID: 398622184}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -1189,6 +1222,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398622178}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &398622184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398622178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &399485019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,6 +2165,7 @@ GameObject:
   - component: {fileID: 595409529}
   - component: {fileID: 595409528}
   - component: {fileID: 595409527}
+  - component: {fileID: 595409531}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -2224,6 +2273,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595409525}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &595409531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595409525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1001 &596351952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2298,6 +2362,7 @@ GameObject:
   - component: {fileID: 615323294}
   - component: {fileID: 615323293}
   - component: {fileID: 615323292}
+  - component: {fileID: 615323296}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -2405,6 +2470,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615323290}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &615323296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615323290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &639869792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,6 +2775,7 @@ GameObject:
   - component: {fileID: 733620762}
   - component: {fileID: 733620761}
   - component: {fileID: 733620760}
+  - component: {fileID: 733620764}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -2802,6 +2883,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733620758}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &733620764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733620758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &740277530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,6 +3713,7 @@ GameObject:
   - component: {fileID: 781132937}
   - component: {fileID: 781132936}
   - component: {fileID: 781132935}
+  - component: {fileID: 781132939}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -3724,6 +3821,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781132933}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &781132939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781132933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &793722936
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,6 +4159,26 @@ Transform:
   - {fileID: 662647016}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &865318330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581075410987772063, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
+  m_PrefabInstance: {fileID: 3252713918244259691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &865318331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865318330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 1
+  range: 2
 --- !u!1 &952045717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5786097810451525583, guid: 260ff1508afea5241b6511d8fbe92201, type: 3}
@@ -4070,6 +4202,7 @@ GameObject:
   - component: {fileID: 952205959}
   - component: {fileID: 952205958}
   - component: {fileID: 952205957}
+  - component: {fileID: 952205961}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -4177,6 +4310,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952205955}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &952205961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952205955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &972441059
 GameObject:
   m_ObjectHideFlags: 0
@@ -4387,6 +4535,7 @@ GameObject:
   - component: {fileID: 1092635041}
   - component: {fileID: 1092635040}
   - component: {fileID: 1092635039}
+  - component: {fileID: 1092635043}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -4494,6 +4643,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092635037}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1092635043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092635037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &1193756232
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,6 +4791,7 @@ GameObject:
   - component: {fileID: 1194391706}
   - component: {fileID: 1194391705}
   - component: {fileID: 1194391704}
+  - component: {fileID: 1194391708}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -4734,6 +4899,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194391702}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1194391708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194391702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &1209763832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5759,6 +5939,7 @@ GameObject:
   - component: {fileID: 1633551242}
   - component: {fileID: 1633551241}
   - component: {fileID: 1633551240}
+  - component: {fileID: 1633551244}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -5866,6 +6047,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633551238}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1633551244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633551238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &1662247455
 GameObject:
   m_ObjectHideFlags: 0
@@ -6150,6 +6346,7 @@ GameObject:
   - component: {fileID: 1702321958}
   - component: {fileID: 1702321957}
   - component: {fileID: 1702321956}
+  - component: {fileID: 1702321960}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -6257,6 +6454,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702321954}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1702321960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702321954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &1710050134 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 770750161599694849, guid: 9a8782f7c692fb14b9156bee9b3f1829, type: 3}
@@ -6276,6 +6488,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 1710050134}
   itemType: HP
+--- !u!114 &1710050140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710050134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 1
+  range: 0
 --- !u!1 &1716096236
 GameObject:
   m_ObjectHideFlags: 0
@@ -6335,6 +6562,7 @@ GameObject:
   - component: {fileID: 1729122064}
   - component: {fileID: 1729122063}
   - component: {fileID: 1729122062}
+  - component: {fileID: 1729122066}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -6442,6 +6670,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729122060}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1729122066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729122060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &1761014633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2116620189788327853, guid: e97858d36faa0f34f8cd1b3bf2b55d48, type: 3}
@@ -6500,6 +6743,7 @@ GameObject:
   - component: {fileID: 1781559208}
   - component: {fileID: 1781559207}
   - component: {fileID: 1781559206}
+  - component: {fileID: 1781559210}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -6607,6 +6851,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781559204}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1781559210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781559204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &1784392149
 GameObject:
   m_ObjectHideFlags: 0
@@ -6816,6 +7075,7 @@ GameObject:
   - component: {fileID: 1984114805}
   - component: {fileID: 1984114804}
   - component: {fileID: 1984114803}
+  - component: {fileID: 1984114807}
   m_Layer: 0
   m_Name: HP(Clone)
   m_TagString: Untagged
@@ -6923,6 +7183,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984114801}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1984114807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984114801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157344b4a16aced4896d29e7b0c17384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1761014641}
+  moveSpeed: 2
+  range: 2
 --- !u!1 &1985458260
 GameObject:
   m_ObjectHideFlags: 0
@@ -7161,6 +7436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HP
       objectReference: {fileID: 0}
+    - target: {fileID: 770750161599694849, guid: 9a8782f7c692fb14b9156bee9b3f1829, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3648203524417336729, guid: 9a8782f7c692fb14b9156bee9b3f1829, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.84
@@ -7208,6 +7487,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 770750161599694849, guid: 9a8782f7c692fb14b9156bee9b3f1829, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1710050139}
+    - targetCorrespondingSourceObject: {fileID: 770750161599694849, guid: 9a8782f7c692fb14b9156bee9b3f1829, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1710050140}
   m_SourcePrefab: {fileID: 100100000, guid: 9a8782f7c692fb14b9156bee9b3f1829, type: 3}
 --- !u!1001 &3252713918244259691
 PrefabInstance:
@@ -7223,7 +7505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6588213044664507522, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.65999997
+      value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 6588213044664507522, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7231,7 +7513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6588213044664507522, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.23
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 6588213044664507522, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7268,7 +7550,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3581075410987772063, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 865318331}
   m_SourcePrefab: {fileID: 100100000, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
