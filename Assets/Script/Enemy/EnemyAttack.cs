@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LongRangWeaponAR : LongRangeWeapon
+public class EnemyAttack : LongRangeWeaponAR
 {
     public override bool Attack()
     {
@@ -16,20 +16,5 @@ public class LongRangWeaponAR : LongRangeWeapon
         newBullet.transform.rotation = fireTr.rotation;
         timeCount = 0;
         return true;
-    }
-
-    public override void SetData()
-    {
-        base.SetData();
-    }
-
-    protected override void Start()
-    {
-        base.Start();
-    }
-
-    protected override void Update()
-    {
-        base.Update();
     }
 }

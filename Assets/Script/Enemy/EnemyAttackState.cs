@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAttackState : MonoBehaviour, State
 {
     public Transform target;
+    public GameObject Weapon;
 
     [Header("적 공격 정보")]
     public float coolTime;
@@ -26,7 +28,11 @@ public class EnemyAttackState : MonoBehaviour, State
             enemy = GetComponent<Enemy>();
         }
 
-        ani.SetBool("isKicking", true);
+        ani.SetBool("isAttack", true);
+        EnemyAttack enemyAttack = GetComponent<EnemyAttack>();
+        enemyAttack.Attack();
+        Weapon.SetActive(true);
+
     }
 
     public void UpdateState()
@@ -35,11 +41,11 @@ public class EnemyAttackState : MonoBehaviour, State
         {
             isAttack = true;
 
-            // 공격시 위치 고정
-            EnemyAgent.SetDestination(transform.position);
-
             // 공격시 플레이어 바라보기
             transform.LookAt(target);
+
+            // 공격시 위치 고정
+            EnemyAgent.SetDestination(transform.position);
 
             StartCoroutine(Attack());
         }
@@ -53,6 +59,7 @@ public class EnemyAttackState : MonoBehaviour, State
 
     public void ExitState()
     {
-        ani.SetBool("isKicking", false);
+        ani.SetBool("isAttack", false);
+        Weapon.SetActive(false);
     }
 }
