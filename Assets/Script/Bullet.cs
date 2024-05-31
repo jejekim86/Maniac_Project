@@ -22,17 +22,18 @@ public class Bullet : MonoBehaviour
             PoolManager.instance.bulletPool.PutInPool(this);
             timeCount = 0;
         }
-        transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward * 10, timeCount);
-        timeCount += Time.deltaTime;  
+        transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward * 10, bulletSpeed);
+        //transform.position = Vector3.forward * Time.deltaTime;
+        timeCount += Time.deltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            
-        }
-
-        // 오브젝트풀로 돌아가기
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Enemy"))
+    //    {
+    //        
+    //    }
+    //
+    //    // 오브젝트풀로 돌아가기
+    //}
 }
