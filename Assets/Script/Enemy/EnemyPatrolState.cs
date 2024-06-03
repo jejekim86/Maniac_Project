@@ -6,20 +6,20 @@ using UnityEngine.AI;
 public class EnemyPatrolState : MonoBehaviour, State
 {
     [Header("적 위치 정보")]
-    public GameObject[] walkPoints;
+    [SerializeField] private GameObject[] walkPoints;
     private int curEnemyPos = 0;
     private float walkingPointRadius = 2;
 
     private Animator ani;
-    private NavMeshAgent EnemyAgent;
+    private NavMeshAgent enemyAgent;
     private Enemy enemy;
 
     public void EnterState()
     {
-        if (ani == null || EnemyAgent == null || enemy == null)
+        if (ani == null || enemyAgent == null || enemy == null)
         {
             ani = GetComponent<Animator>();
-            EnemyAgent = GetComponent<NavMeshAgent>();
+            enemyAgent = GetComponent<NavMeshAgent>();
             enemy = GetComponent<Enemy>();
         }
 
@@ -38,7 +38,7 @@ public class EnemyPatrolState : MonoBehaviour, State
     private void SetNextDestination()
     {
         curEnemyPos = (curEnemyPos + 1) % walkPoints.Length;
-        EnemyAgent.SetDestination(walkPoints[curEnemyPos].transform.position);
+        enemyAgent.SetDestination(walkPoints[curEnemyPos].transform.position);
     }
 
     public void ExitState()

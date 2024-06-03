@@ -1,41 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAttackState : MonoBehaviour, State
 {
-    public Transform target;
+    [SerializeField] private Transform target;
+    [SerializeField] private GameObject weapon;
 
     [Header("적 공격 정보")]
-    public float coolTime;
-    public float damage = 5;
-    public float attackRange;
+    [SerializeField] private float coolTime;
+    [SerializeField] private float damage = 5;
+    [SerializeField] private float attackRange;
     private bool isAttack;
 
     private Animator ani;
-    private NavMeshAgent EnemyAgent;
+    private NavMeshAgent enemyAgent;
     private Enemy enemy;
 
     public void EnterState()
     {
-        if (ani == null || EnemyAgent == null || enemy == null)
+        if (ani == null || enemyAgent == null || enemy == null)
         {
             ani = GetComponent<Animator>();
-            EnemyAgent = GetComponent<NavMeshAgent>();
+            enemyAgent = GetComponent<NavMeshAgent>();
             enemy = GetComponent<Enemy>();
         }
 
-        ani.SetBool("isKicking", true);
+        ani.SetBool("isAttack", true);
+        EnemyAttack enemyAttack = GetComponent<EnemyAttack>();
+        enemyAttack.Attack();
+        weapon.SetActive(true);
+
     }
 
     public void UpdateState()
     {
+        // 공격 중이 아니면 공격 시작
         if (!isAttack)
         {
             isAttack = true;
             StartCoroutine(Attack());
         }
+
+        // 타겟이 존재하면 타겟을 천천히 바라보도록 회전
+        if (target != null)
+        {
+            Vector3 direction = (target.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        }
+
+        // 공격 시 위치 고정
+        enemyAgent.SetDestination(transform.position);
     }
 
     private IEnumerator Attack()
@@ -46,6 +64,7 @@ public class EnemyAttackState : MonoBehaviour, State
 
     public void ExitState()
     {
-        ani.SetBool("isKicking", false);
+        ani.SetBool("isAttack", false);
+        weapon.SetActive(false);
     }
 }

@@ -6,16 +6,16 @@ using UnityEngine.AI;
 public class EnemyChaseState : MonoBehaviour, State
 {
     private Animator ani;
-    private NavMeshAgent EnemyAgent;
+    private NavMeshAgent enemyAgent;
     private Transform target;
     private Enemy enemy;
 
     public void EnterState()
     {
-        if (ani == null || EnemyAgent == null || enemy == null)
+        if (ani == null || enemyAgent == null || enemy == null)
         {
             ani = GetComponent<Animator>();
-            EnemyAgent = GetComponent<NavMeshAgent>();
+            enemyAgent = GetComponent<NavMeshAgent>();
             enemy = GetComponent<Enemy>();
         }
 
@@ -27,7 +27,7 @@ public class EnemyChaseState : MonoBehaviour, State
     {
         if (target != null)
         {
-            EnemyAgent.SetDestination(target.position);
+            enemyAgent.SetDestination(target.position);
         }
     }
 
