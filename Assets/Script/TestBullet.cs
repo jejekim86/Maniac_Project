@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Jobs;
@@ -190,3 +190,4 @@ public class BulletTest<T> where T : MonoBehaviour
         return targetObject.name;
     }
 }
+*/
