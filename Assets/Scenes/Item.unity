@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 215171437}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 273440028}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 398622184}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2168,7 +2168,7 @@ GameObject:
   - component: {fileID: 595409531}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2365,7 +2365,7 @@ GameObject:
   - component: {fileID: 615323296}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2778,7 +2778,7 @@ GameObject:
   - component: {fileID: 733620764}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3580,6 +3580,17 @@ MonoBehaviour:
   reloadT: 1
   bullet: {fileID: -8532365134168340071, guid: 1f3e49bfe88769647836f31b274724f1, type: 3}
   fireTr: {fileID: 511673581}
+--- !u!114 &761718903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 913757945964297525, guid: 4d343708bdd39564aa5d01ec80d3ecdb, type: 3}
+  m_PrefabInstance: {fileID: 761718884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761718885}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9207ee96ce6bd8e40b87d68769cd7432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &762862245
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,7 +3727,7 @@ GameObject:
   - component: {fileID: 781132939}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4205,7 +4216,7 @@ GameObject:
   - component: {fileID: 952205961}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4538,7 +4549,7 @@ GameObject:
   - component: {fileID: 1092635043}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4794,7 +4805,7 @@ GameObject:
   - component: {fileID: 1194391708}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5942,7 +5953,7 @@ GameObject:
   - component: {fileID: 1633551244}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6126,13 +6137,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1662247455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b127db597eeca4cac16f30c138d8c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 9961ea64614dde044ba61ba04745ecaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnSize: 2
-  spawnAmmount: 4
-  characters:
-  - {fileID: 761718885}
+  objectPool:
+    targetObject: {fileID: 761718903}
+    poolingAmount: 40
+  spawnAreaMin: {x: -27.8, y: 0, z: 28.93}
+  spawnAreaMax: {x: 29.7, y: 5.45, z: -29.6}
+  spawnInterval: 2
 --- !u!1 &1687469047
 GameObject:
   m_ObjectHideFlags: 0
@@ -6349,7 +6362,7 @@ GameObject:
   - component: {fileID: 1702321960}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6565,7 +6578,7 @@ GameObject:
   - component: {fileID: 1729122066}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6712,6 +6725,8 @@ MonoBehaviour:
   moneyText: {fileID: 697431960}
   HP_image: {fileID: 972441061}
   maxHp: 10
+  itemMoveSpeed: 1
+  itemRange: 2
 --- !u!4 &1761014641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914640652056420520, guid: e97858d36faa0f34f8cd1b3bf2b55d48, type: 3}
@@ -6746,7 +6761,7 @@ GameObject:
   - component: {fileID: 1781559210}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7078,7 +7093,7 @@ GameObject:
   - component: {fileID: 1984114807}
   m_Layer: 0
   m_Name: HP(Clone)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7502,6 +7517,10 @@ PrefabInstance:
     - target: {fileID: 3581075410987772063, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
       propertyPath: m_Name
       value: Money
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581075410987772063, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 6588213044664507522, guid: b0dc110c9498b1a4daeee450150cff4e, type: 3}
       propertyPath: m_LocalPosition.x
