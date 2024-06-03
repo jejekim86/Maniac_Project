@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -26,16 +25,13 @@ public class Controller : MonoBehaviour
     private float curHp; // 현재 체력
 
     Vector3 translation;
-    bool canDash;
 
+    bool canDash;
     void Start()
     {
         canDash = true;
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        money = 1000; // 초기 돈
-        curHp = 0.1f; // 초기 체력
-
         //StartCoroutine(LongRangeWeapon());
     }
 
@@ -75,13 +71,13 @@ public class Controller : MonoBehaviour
         //근접 공격
         if (Input.GetMouseButton(1))
         {
-            if(meleeWeapon.Attack())
+            if(meleeWeapon.MeleeAttack())
                 animator.SetTrigger("MeleeAttack");
         }
         //원거리 공격
         if (Input.GetMouseButton(0))
         {
-            longRangeWeapon.Attack();
+            longRangeWeapon.LongRangeAttack();
         }
 
         AttractItems();
